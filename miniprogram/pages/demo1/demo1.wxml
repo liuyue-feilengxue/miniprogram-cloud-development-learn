@@ -1,0 +1,2 @@
+<!--pages/demo1/demo1.wxml-->
+<button type="primary" bindtap="updateData">更新一条数据</button>
