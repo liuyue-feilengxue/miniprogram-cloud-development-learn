@@ -1,5 +1,6 @@
-// pages/demo2/demo2.js
+// pages/demo3/demo3.js
 const db = wx.cloud.database();
+const _ = db.command;
 Page({
 
   /**
@@ -7,13 +8,16 @@ Page({
    */
   data: {
 
-  },
+    },
   getData(){
-    db.collection("demolist").field({
-      author:true
+    db.collection("demolist").where({
+      author: _.eq("张三")
     }).get()
     .then(res=>{
       console.log(res)
+      this.setData({
+        dataList:res.data
+      })
     })
   },
   /**
