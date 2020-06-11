@@ -1,12 +1,13 @@
 // pages/demo1/demo1.js
 const db = wx.cloud.database();
+var delateId = "";
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+   
   },
   updateData(){
     db.collection("demolist").doc("f2a60d815edf897a00727b77257d4935").update({
@@ -16,13 +17,41 @@ Page({
     }).then(res=>{
       console.log(res)
     })
-
+  },
+  delateBtn(){
+    db.collection("demolist").doc(delateId).remove()
+    .then(res=>{
+      console.log(res)
+    })
+  },
+  delateData(res){
+    var Ipt=res.detail.value;
+    delateId = Ipt
+  },
+  getData(){
+    db.collection("demolist").get()
+    .then(res=>{
+      this.setData({
+        dataArr : res.data
+      })
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getData();
+    db.collection("demolist").watch({
+      onChange:function(res){
+        console.log(res.docs)
+        //this.setData({
+          dataArr : res.docs
+        //})
+      },
+      onError:function(err){
+        console.log(err)
+      }
+    })
   },
 
   /**

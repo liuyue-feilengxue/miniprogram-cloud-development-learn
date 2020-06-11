@@ -1,2 +1,7 @@
 <!--pages/demo1/demo1.wxml-->
 <button type="primary" bindtap="updateData">更新一条数据</button>
+
+<input bindinput="delateData"></input>
+<button bindtap="delateBtn">删除一条数据</button>
+
+<view wx:for="{{dataArr}}" wx:key = "index">{{item.author}}</view>
