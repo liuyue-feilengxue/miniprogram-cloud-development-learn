@@ -12,6 +12,7 @@ Page({
   getData(){
     db.collection("demolist").where({
       author: _.eq("张三")
+
     }).get()
     .then(res=>{
       console.log(res)
