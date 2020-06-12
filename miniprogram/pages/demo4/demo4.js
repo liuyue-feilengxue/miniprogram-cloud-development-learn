@@ -1,6 +1,4 @@
-// pages/demo3/demo3.js
-const db = wx.cloud.database();
-const _ = db.command;
+// pages/demo4/demo4.js
 Page({
 
   /**
@@ -8,35 +6,21 @@ Page({
    */
   data: {
 
-    },
-  getData(){
-    db.collection("demolist").where({
-      author: _.eq("张三")
-    }).get()
-    .then(res=>{
-      console.log(res)
-      this.setData({
-        dataList:res.data
-      })
-    })
   },
-  upDate(){
-    db.collection("demolist").doc("4d5a19345ee1e4ae006a09f21ccde4b0").update({
-      data:{
-        style:{
-          color:"red",
-          size:12
-        }
-      }
-    }).then(res=>{
-      console.log(res)
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.cloud.callFunction({
+      name:"getData",
+      data:{
+        name:"张三",
+        age:18
+      }
+    }).then(res=>{
+      console.log(res)
+    })
   },
 
   /**
