@@ -1,0 +1,1 @@
+<button type="primary" bindtap="clickBtn">上传文件</button>

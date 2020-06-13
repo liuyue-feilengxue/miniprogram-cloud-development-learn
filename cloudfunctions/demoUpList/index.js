@@ -3,10 +3,14 @@ const cloud = require('wx-server-sdk')
 
 cloud.init()
 const db = cloud.database();
+const _ = db.command;
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  var num = event.num;
-  var page = event.page;
-  return await db.collection("demolist").skip(page).limit(num).get()
+  var id = event.id
+  return await db.collection("demolist").doc(id).update({
+    data:{
+      readcount:_.inc(7)
+    }
+  })
 }

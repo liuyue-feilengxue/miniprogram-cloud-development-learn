@@ -1,5 +1,9 @@
 <!--pages/demo4/demo4.wxml-->
-<view class="row" wx:for="{{dataList}}" wx:key="index">
+<view bindtap="clickRow" 
+data-id="{{item._id}}" 
+data-idx="{{index}}"  
+class="row" wx:for="{{dataList}}" wx:key="index">
+<!-- data-用于传递数值  -->
   <view class="title">{{index+1}}{{item.title}}</view>
-  <view>阅读量：333</view>
+  <view>阅读量：{{item.readcount}}</view>
 </view>
