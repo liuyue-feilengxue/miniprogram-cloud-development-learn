@@ -9,13 +9,19 @@ Page({
   },
   clickBtn(){
     wx.chooseImage({
-      complete: (res) => {
-        console.log(res)
+      success: (res) => {
+        var filePath = res.tempFilePaths[0]
+        this.cloudFile(filePath)
       },
     })
-    // wx.cloud.uploadFile({
-
-    // })
+  },
+  cloudFile(path){
+    wx.cloud.uploadFile({
+      cloudPath: Date.now()+".jpg",//时间戳，对文件命名
+      filePath:path
+    }).then(res=>{
+      console.log(res)
+    })
   },
   /**
    * 生命周期函数--监听页面加载
