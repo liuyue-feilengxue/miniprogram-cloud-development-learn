@@ -6,5 +6,6 @@ const db = cloud.database();
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  return await db.collection("demolist").get()
+  var num = event.num;
+  return await db.collection("demolist").limit(num).get()
 }

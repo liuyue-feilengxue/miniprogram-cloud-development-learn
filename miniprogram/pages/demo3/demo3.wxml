@@ -5,3 +5,4 @@
   <view>---------------</view>
 </view>
 <button type="primary" bindtap="upDate">更新数据</button>
+<button>test</button>

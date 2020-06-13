@@ -6,4 +6,6 @@ textarea{
 }
 button{
   border: solid 1rpx #000;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
 }

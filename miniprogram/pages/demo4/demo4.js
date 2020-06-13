@@ -7,20 +7,24 @@ Page({
   data: {
 
   },
-
+  getData(){
+    wx.cloud.callFunction({
+      name:"demoGetList",
+      data:{
+        num:5
+      }
+    }).then(res=>{
+      console.log(res.result.data)
+      this.setData({
+        dataList:res.result.data
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.cloud.callFunction({
-      name:"getData",
-      data:{
-        name:"张三",
-        age:18
-      }
-    }).then(res=>{
-      console.log(res)
-    })
+    this.getData()
   },
 
   /**
