@@ -33,7 +33,18 @@ Page({
         newYear = cur_year -1 ;
         newMonth = 12;
       }
-      
+      let e = new Date(cur_year, cur_month - 2, this.data.selectDate.date)
+      this.getMonthDaysCurrent(e)
+    }
+    else{
+      let newMonth = cur_month-1;
+      let newYear = cur_year;
+      if (newMonth<1){//现在是12月
+        newYear = cur_year -1 ;
+        newMonth = 12;
+      }
+      let e = new Date(cur_year, cur_month , this.data.selectDate.date)
+      this.getMonthDaysCurrent(e)
     }
   },
   // 所选时间对应月份日期

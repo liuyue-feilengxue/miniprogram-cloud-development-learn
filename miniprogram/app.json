@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/demo8/demo8",
+    
     "pages/demo7/demo7",
+    "pages/demo9/demo9",
+    "pages/demo8/demo8",
     "pages/demo6/demo6",
     "pages/demo5/demo5",
     "pages/demo4/demo4",

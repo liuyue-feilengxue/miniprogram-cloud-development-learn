@@ -1,6 +1,7 @@
 <!--pages/Calendar/Calendar.wxml-->
 <!-- 打卡日历页面 -->
 <view class='all'>
+  <!-- 标题 -->
   <view class="bar">
     <!-- 上一个月 -->
     <view class="previous" bindtap="handleCalendar" data-handle="prev">
@@ -30,8 +31,8 @@
             </view>
             <!-- 每个月份的有数字的单元格 -->
             <view class='cell' wx:else>
-              <!-- 当前日期已签到 -->
-              <view wx:if="{{days[j+k].isSign == true}}" style='background-color:#83C75D' class='cell'>
+              <!-- 当前日期已签到days[j+k].isSign == true -->
+              <view wx:if="{{cur_day == j+k}}" style='color: #34d0ba' class='cell' bindtap="click">
                 <text>{{days[j+k].date}}</text>
               </view>
               <!-- 当前日期未签到 -->

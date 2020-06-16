@@ -1,0 +1,32 @@
+<!--pages/demo9/demo9.wxml-->
+<!-- 标题 -->
+<view class="title">
+    <!-- 上一个月 -->
+    <view class="previous" bindtap="handleCalendar" data-handle="prev">
+      <image src='../../images/left.png'></image>
+    </view>
+    <!-- 显示年月 -->
+    <view class="date">{{cur_year || "--"}} 年 {{cur_month || "--"}} 月</view>
+    <!-- 下一个月 -->
+    <view class="next" bindtap="handleCalendar" data-handle="next">
+      <image src='../../images/right.png'></image>
+    </view>
+</view>
+
+<!-- 星期 -->
+<view class="week">
+  <view wx:for="{{weeks_ch}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
+</view>
+
+<view class="day">
+  <view class='calendar-background display-space-between'>
+      <view class='calendar-item {{item.current ? "":"text-gray"}} {{item.selected ? "text-red":""}}' 
+      wx:for-items="{{calendarDays}}" 
+      wx:for-item="item" 
+      wx:key="*item" 
+      wx:for-index="index" 
+      data-index='{{index}}' 
+      bindtap='clickDate'>
+      {{item.date}}</view>
+  </view>
+</view>

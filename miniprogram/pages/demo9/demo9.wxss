@@ -1,0 +1,50 @@
+/* pages/demo9/demo9.wxss */
+image{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 30rpx 20rpx;
+  padding: 10rpx;
+}
+
+.week{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  /* margin: 20rpx; */
+  border-radius: 10px;
+}
+
+.calendar-background {
+  font-size: 24rpx;
+  padding-top: 20rpx;
+}
+
+.calendar-item {
+  width: 14%;
+  height: 50rpx;
+  text-align: center;
+}
+
+.display-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.text-gray {
+  color: #878787;
+}
+.text-red {
+  color: #F87474;
+}
+

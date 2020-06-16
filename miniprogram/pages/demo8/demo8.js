@@ -10,6 +10,7 @@ Page({
     signUp:[],
     cur_year:0,
     cur_month:0,
+    cur_day:0,
     count:0
   },
 
@@ -22,6 +23,7 @@ Page({
     const date = new Date();
     const cur_year = date.getFullYear();
     const cur_month = date.getMonth() + 1;
+    const cur_day = date.getDate();
     const weeks_ch = ['日', '一', '二', '三', '四', '五', '六'];
     this.calculateEmptyGrids(cur_year, cur_month);
     this.calculateDays(cur_year, cur_month);
@@ -30,7 +32,8 @@ Page({
     this.setData({
       cur_year,
       cur_month,
-      weeks_ch
+      weeks_ch,
+      cur_day
     })
   
   },
